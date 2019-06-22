@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdArtefactoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Artefacto">
+    <Key>
+      <PropertyRef Name="art_cod" />
+    </Key>
+    <Property Name="art_cod" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Lin_cod" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="art_nom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="art_pre" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="art_img" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="cli_cod" />
+    </Key>
+    <Property Name="cli_cod" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cli_nom" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="cli_tel" Type="Decimal" Precision="7" Scale="0" />
+    <Property Name="cli_ruc" Type="Decimal" Precision="11" Scale="0" />
+    <Property Name="cli_dir" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Linea">
+    <Key>
+      <PropertyRef Name="Lin_cod" />
+    </Key>
+    <Property Name="Lin_cod" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Lin_nom" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="proforma">
+    <Key>
+      <PropertyRef Name="nro_pro" />
+    </Key>
+    <Property Name="nro_pro" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cli_cod" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="art_cod" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="tipo_ven" Type="Int32" />
+    <Property Name="Interes" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="saldo" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="cuota" Type="Decimal" Precision="11" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="bdArtefactoEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Artefacto" EntityType="Self.Artefacto" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Linea" EntityType="Self.Linea" />
+    <EntitySet Name="proforma" EntityType="Self.proforma" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdArtefactoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Artefacto">
+    <Key>
+      <PropertyRef Name="art_cod" />
+    </Key>
+    <Property Name="art_cod" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Lin_cod" Type="char" MaxLength="2" />
+    <Property Name="art_nom" Type="varchar" MaxLength="30" />
+    <Property Name="art_pre" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="art_img" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="cli_cod" />
+    </Key>
+    <Property Name="cli_cod" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="cli_nom" Type="varchar" MaxLength="25" />
+    <Property Name="cli_tel" Type="numeric" Precision="7" Scale="0" />
+    <Property Name="cli_ruc" Type="numeric" Precision="11" Scale="0" />
+    <Property Name="cli_dir" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Linea">
+    <Key>
+      <PropertyRef Name="Lin_cod" />
+    </Key>
+    <Property Name="Lin_cod" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Lin_nom" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="proforma">
+    <Key>
+      <PropertyRef Name="nro_pro" />
+    </Key>
+    <Property Name="nro_pro" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="cli_cod" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="art_cod" Type="char" MaxLength="5" />
+    <Property Name="precio" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="tipo_ven" Type="int" />
+    <Property Name="Interes" Type="numeric" Precision="8" Scale="2" />
+    <Property Name="saldo" Type="numeric" Precision="11" Scale="2" />
+    <Property Name="cuota" Type="numeric" Precision="11" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="bdArtefactoModelStoreContainer">
+    <EntitySet Name="Artefacto" EntityType="Self.Artefacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Linea" EntityType="Self.Linea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proforma" EntityType="Self.proforma" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

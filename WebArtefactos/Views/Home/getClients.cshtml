@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebArtefactos.Models.Clientes>
+
+@{
+    ViewBag.Title = "getClients";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>getClients</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Codigo
+        </th>
+        <th>
+           Nombre
+        </th>
+        <th>
+           Telefono
+        </th>
+        <th>
+            Elegir
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_cod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_tel)
+        </td>
+       
+
+        <td>
+            @Html.ActionLink("Seleccionar", "Compra", new { codi = @ViewBag.cod, pric = @ViewBag.pri })
+           
+        </td>
+    </tr>
+}
+
+</table>

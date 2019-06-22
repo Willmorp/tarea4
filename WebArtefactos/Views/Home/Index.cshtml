@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebArtefactos.Models.Artefacto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Codigo
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Precio
+        </th>
+        <th>
+            
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lin_cod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.art_nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.art_pre)
+        </td>
+        <td>
+            <img src="@Url.Content("~/Content/artefactos/"+@item.art_img+"")" height="100" width="100" />
+        
+        </td>
+        <td>
+            @Html.ActionLink("Comprar", "getClients") |
+           
+        </td>
+    </tr>
+}
+
+</table>

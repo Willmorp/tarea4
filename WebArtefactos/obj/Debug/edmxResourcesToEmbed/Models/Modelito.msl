@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdArtefactoModelStoreContainer" CdmEntityContainer="bdArtefactoEntities">
+    <EntitySetMapping Name="Artefacto">
+      <EntityTypeMapping TypeName="bdArtefactoModel.Artefacto">
+        <MappingFragment StoreEntitySet="Artefacto">
+          <ScalarProperty Name="art_cod" ColumnName="art_cod" />
+          <ScalarProperty Name="Lin_cod" ColumnName="Lin_cod" />
+          <ScalarProperty Name="art_nom" ColumnName="art_nom" />
+          <ScalarProperty Name="art_pre" ColumnName="art_pre" />
+          <ScalarProperty Name="art_img" ColumnName="art_img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="bdArtefactoModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="cli_cod" ColumnName="cli_cod" />
+          <ScalarProperty Name="cli_nom" ColumnName="cli_nom" />
+          <ScalarProperty Name="cli_tel" ColumnName="cli_tel" />
+          <ScalarProperty Name="cli_ruc" ColumnName="cli_ruc" />
+          <ScalarProperty Name="cli_dir" ColumnName="cli_dir" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Linea">
+      <EntityTypeMapping TypeName="bdArtefactoModel.Linea">
+        <MappingFragment StoreEntitySet="Linea">
+          <ScalarProperty Name="Lin_cod" ColumnName="Lin_cod" />
+          <ScalarProperty Name="Lin_nom" ColumnName="Lin_nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proforma">
+      <EntityTypeMapping TypeName="bdArtefactoModel.proforma">
+        <MappingFragment StoreEntitySet="proforma">
+          <ScalarProperty Name="nro_pro" ColumnName="nro_pro" />
+          <ScalarProperty Name="cli_cod" ColumnName="cli_cod" />
+          <ScalarProperty Name="art_cod" ColumnName="art_cod" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="tipo_ven" ColumnName="tipo_ven" />
+          <ScalarProperty Name="Interes" ColumnName="Interes" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
+          <ScalarProperty Name="cuota" ColumnName="cuota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
